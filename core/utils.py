@@ -45,7 +45,7 @@ def escape_param(s):
 def rpc(method, **params):
     params = json.dumps(params)
     query = b'{"jsonrpc": "2.0", "method": "%s", "params": %s, "id": 1}' % (method.encode(), params.encode())
-    return json.loads(xbmc.executeJSONRPC(query.decode()), encoding='utf-8')
+    return json.loads(xbmc.executeJSONRPC(query.decode()))
 
 
 def _split_multipaths(paths):
